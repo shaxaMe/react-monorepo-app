@@ -1034,7 +1034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.44.1":
+"@playwright/test@npm:^1.58.2":
   version: 1.58.2
   resolution: "@playwright/test@npm:1.58.2"
   dependencies:
@@ -1056,7 +1056,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@repo/admin@workspace:apps/admin"
   dependencies:
-    "@playwright/test": ^1.44.1
+    "@playwright/test": ^1.58.2
     "@repo/config": "*"
     "@repo/hooks": "*"
     "@repo/types": "*"

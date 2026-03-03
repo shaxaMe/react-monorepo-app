@@ -7,4 +7,3 @@ export * from './components/Table';
 export * from './theme';
 // Tokens (for consumers who need raw values)
 export * from './tokens';
-//# sourceMappingURL=index.js.map
