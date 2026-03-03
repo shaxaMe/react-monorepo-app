@@ -10,12 +10,18 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "dev:admin": "turbo run dev --filter=@repo/admin",
+    "dev:web": "turbo run dev --filter=@repo/public-web",
+    "dev:ui": "turbo run dev --filter=@repo/ui",
     "type-check": "turbo run type-check",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "build:admin": "turbo run build --filter=@repo/admin",
+    "build:web": "turbo run build --filter=@repo/public-web",
+    "build:ui": "turbo run build --filter=@repo/ui"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
