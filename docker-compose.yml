@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  # ── Production build ─────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-/api}
+    ports:
+      - '${PORT:-80}:80'
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://localhost/health']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.app.rule=Host(`${DOMAIN:-localhost}`)'
+
+  # ── Mock API (development / staging) ────────────────────────────
+  # Uncomment when you have a real backend service
+  # api:
+  #   image: your-api-image:latest
+  #   environment:
+  #     - DATABASE_URL=${DATABASE_URL}
+  #   ports:
+  #     - '4000:4000'
+
+networks:
+  default:
+    name: enterprise_network

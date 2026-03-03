@@ -1,0 +1,78 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin: 0 0 var(--space-1);
+}
+
+[data-theme='dark'] .title {
+  color: var(--color-gray-100);
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+.error {
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+  border: 1px solid var(--color-error-main);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.875rem;
+}
+
+.nameCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fullName {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+[data-theme='dark'] .fullName {
+  color: var(--color-gray-100);
+}
+
+.email {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.roleBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+[data-theme='dark'] .roleBadge {
+  background-color: var(--color-gray-700);
+  color: var(--color-gray-300);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-1);
+}

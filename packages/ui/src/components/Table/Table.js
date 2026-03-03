@@ -1,0 +1,8 @@
+import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
+import styles from './Table.module.css';
+const SkeletonRow = ({ columnCount }) => (_jsx("tr", { className: styles.skeletonRow, children: Array.from({ length: columnCount }).map((_, i) => (_jsx("td", { className: styles.td, children: _jsx("div", { className: styles.skeleton }) }, i))) }));
+export const Table = ({ columns, data, keyExtractor, isLoading = false, emptyMessage = 'No data available', caption, }) => {
+    return (_jsx("div", { className: styles.container, role: "region", "aria-busy": isLoading, children: _jsxs("table", { className: styles.table, children: [caption && _jsx("caption", { className: styles.caption, children: caption }), _jsx("thead", { className: styles.thead, children: _jsx("tr", { children: columns.map((col) => (_jsx("th", { scope: "col", className: styles.th, style: col.width ? { width: col.width } : undefined, children: col.header }, col.key))) }) }), _jsx("tbody", { className: styles.tbody, children: isLoading ? (_jsxs(_Fragment, { children: [_jsx(SkeletonRow, { columnCount: columns.length }), _jsx(SkeletonRow, { columnCount: columns.length }), _jsx(SkeletonRow, { columnCount: columns.length })] })) : data.length === 0 ? (_jsx("tr", { children: _jsx("td", { colSpan: columns.length, className: styles.empty, children: emptyMessage }) })) : (data.map((row) => (_jsx("tr", { className: styles.tr, children: columns.map((col) => (_jsx("td", { className: styles.td, children: col.cell(row) }, col.key))) }, keyExtractor(row))))) })] }) }));
+};
+Table.displayName = 'Table';
+//# sourceMappingURL=Table.js.map

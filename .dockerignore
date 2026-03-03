@@ -1,0 +1,17 @@
+node_modules
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+dist
+.next
+.turbo
+coverage
+playwright-report
+test-results
+storybook-static
+.git
+.gitignore
+*.md
+.env
+.env.local
+.env.*.local

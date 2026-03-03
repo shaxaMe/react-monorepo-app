@@ -1,0 +1,105 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  padding: 16px;
+}
+
+.thead {
+  background-color: var(--color-gray-50);
+}
+
+.th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  border-bottom: 1px solid var(--color-gray-200);
+  white-space: nowrap;
+}
+
+.tbody .tr:hover {
+  background-color: var(--color-gray-50);
+}
+
+.td {
+  padding: 12px 16px;
+  color: var(--color-gray-700);
+  border-bottom: 1px solid var(--color-gray-100);
+  vertical-align: middle;
+}
+
+.tbody .tr:last-child .td {
+  border-bottom: none;
+}
+
+.empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--color-gray-400);
+  font-style: italic;
+}
+
+/* Skeleton loader */
+.skeletonRow {
+  pointer-events: none;
+}
+
+.skeleton {
+  height: 16px;
+  border-radius: var(--radius-base);
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-200) 50%, var(--color-gray-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Dark mode */
+[data-theme='dark'] .container {
+  border-color: var(--color-gray-700);
+}
+
+[data-theme='dark'] .thead {
+  background-color: var(--color-gray-800);
+}
+
+[data-theme='dark'] .th {
+  color: var(--color-gray-400);
+  border-bottom-color: var(--color-gray-700);
+}
+
+[data-theme='dark'] .td {
+  color: var(--color-gray-300);
+  border-bottom-color: var(--color-gray-800);
+}
+
+[data-theme='dark'] .tbody .tr:hover {
+  background-color: var(--color-gray-800);
+}
+
+[data-theme='dark'] .skeleton {
+  background: linear-gradient(90deg, var(--color-gray-800) 25%, var(--color-gray-700) 50%, var(--color-gray-800) 75%);
+  background-size: 200% 100%;
+}
